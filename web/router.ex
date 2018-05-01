@@ -17,6 +17,7 @@ defmodule ApiExample.Router do
     pipe_through(:api)
 
     get("/users", UserController, :index)
+    get "/users/:id", UserController, :show
   end
 
   # Other scopes may use custom stacks.

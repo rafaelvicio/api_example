@@ -5,4 +5,9 @@ defmodule ApiExample.UserController do
     users = Repo.all(ApiExample.User)
     json(conn, users)
   end
+
+  def show(conn, %{"id" => id}) do
+    user = Repo.get(ApiExample.User, String.to_integer(id))
+    json(conn, user)
+  end
 end
